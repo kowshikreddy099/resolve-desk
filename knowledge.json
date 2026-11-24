@@ -1,0 +1,56 @@
+[
+  {
+    "team": "Billing",
+    "examples": [
+      "charged twice duplicate payment double charge money debited twice",
+      "refund missing invoice incorrect amount bill overcharged",
+      "subscription cancelled still billed payment deducted"
+    ],
+    "plan": "Compare the invoice with the payment ledger. Verify any duplicate entry before authorizing a refund."
+  },
+  {
+    "team": "Delivery",
+    "examples": [
+      "package never arrived order missing shipment delivery delayed",
+      "parcel tracking says delivered but nothing received",
+      "courier shipped to wrong address late delivery"
+    ],
+    "plan": "Check tracking scans and proof of delivery. Confirm the address through the order record before arranging a replacement."
+  },
+  {
+    "team": "Account access",
+    "examples": [
+      "cannot log in locked out login account password reset",
+      "verification code otp never received sign in failed",
+      "password reset email expired login blocked"
+    ],
+    "plan": "Check the sign-in event and recovery channel. Use the verified account recovery process."
+  },
+  {
+    "team": "Technical support",
+    "examples": [
+      "app crashes freezes when opening dashboard error",
+      "website broken blank screen page fails to load",
+      "application slow outage service unavailable server down"
+    ],
+    "plan": "Collect the error message, app version and time. Reproduce the issue and verify the fix with the reporter."
+  },
+  {
+    "team": "Product quality",
+    "examples": [
+      "item arrived damaged cracked broken defective product",
+      "replacement needed faulty device stopped working",
+      "wrong size poor quality item received"
+    ],
+    "plan": "Confirm the product and defect with the reporter. Check replacement eligibility and record the agreed remedy."
+  },
+  {
+    "team": "Account security",
+    "examples": [
+      "unauthorized transaction someone used my card fraud",
+      "account hacked suspicious login stolen credentials",
+      "unauthorised payment card stolen transaction not mine"
+    ],
+    "plan": "Route to a security reviewer and verify the reporter through an approved channel."
+  }
+]
