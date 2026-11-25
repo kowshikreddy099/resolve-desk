@@ -86,6 +86,14 @@ async function review(id,saved){
     link.download='resolve-'+id+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);
   };
   box.append(download);
+  if ($('rating')) {
+    const rate = node('button', 'Rate this experience');
+    rate.onclick = () => {
+      $('detail').close();
+      $('rating').focus();
+    };
+    box.append(rate);
+  }
   if(!$('detail').open)$('detail').showModal();
 }
 function invalidate(){analysisId++;$('result').replaceChildren()}
@@ -107,3 +115,11 @@ bind($('triage'),async()=>{
 refresh().catch(error=>{$('message').textContent='Could not load cases. '+error.message});
 
 
+const reviewForm = $('review-form');
+if (reviewForm) {
+  reviewForm.addEventListener('submit', () => {
+    const rating = $('rating').value + '/5';
+    reviewForm.elements.namedItem('title').value = '[Review] Resolve Desk · ' + rating;
+    reviewForm.elements.namedItem('body').value = ['Overall rating: ' + rating, $('feedback').value.trim()].filter(Boolean).join('\n\n');
+  });
+}
