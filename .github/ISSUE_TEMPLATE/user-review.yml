@@ -1,0 +1,26 @@
+name: User review
+description: Rate your experience using Resolve Desk.
+title: "[Review] "
+body:
+  - type: markdown
+    attributes:
+      value: Your review is public. Please leave out order numbers, contact details and private complaint information.
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Overall rating
+      options:
+        - "5 – Excellent"
+        - "4 – Good"
+        - "3 – Average"
+        - "2 – Poor"
+        - "1 – Very poor"
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Your experience
+      placeholder: What did you try, and how well did it work?
+    validations:
+      required: true
